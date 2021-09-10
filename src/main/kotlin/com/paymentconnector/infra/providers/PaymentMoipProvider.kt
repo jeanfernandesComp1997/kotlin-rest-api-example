@@ -1,6 +1,5 @@
 package com.paymentconnector.infra.providers
 
-import com.paymentconnector.domain.dtos.PaymentRequest
 import com.paymentconnector.domain.entities.Payment
 import com.paymentconnector.infra.providers.dtos.CreatePaymentMoipResponse
 import com.paymentconnector.infra.providers.interfaces.IPaymentMoipProvider
@@ -15,7 +14,7 @@ import java.net.http.HttpResponse
 
 @Singleton
 class PaymentMoipProvider : IPaymentMoipProvider {
-    override fun createPayment(payment: PaymentRequest): CreatePaymentMoipResponse {
+    override fun createPayment(payment: Payment): CreatePaymentMoipResponse {
         try {
             val client = HttpClient.newBuilder().build()
 
